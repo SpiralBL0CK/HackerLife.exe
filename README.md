@@ -45,3 +45,11 @@ function delete_pages() {
 }
 
 we place in between the deltepages which what to see delete stuff , we put re allocation of our said object. And lord behold inser image of 41414141 EIP control. Now we were talking earlier about an exploit flow or the exploit arhitecture stand point, and we mentioned a fact that we wanted to call gc to clear the heap. Well withouth going into detail too mmuch for people who are not familiar on how once could call gc to clear his heap state, one method cause there are many is to create a very big object a few times and he would be done.
+Now the actual implementation of this was this one function gc(){
+	const maxMallocBytes = 128 * 0x100000; //check if this is true ????
+	for(var i = 0 ; i < 3 ; i++){
+		var x = new SharedArrayBuffer(maxMallocBytes);
+	}
+}
+
+nothing new under the sun just wanted to point a quick fact about the implementation of this thing
