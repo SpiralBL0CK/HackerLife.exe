@@ -1026,3 +1026,4 @@ https://helpx.adobe.com/acrobat/kb/adding-watermark-pdf.html
 .rdata:05097E04	00000032	C	CJS_PluginMgr::LoadJSPlugin::AddToolButtons - End
 .rdata:05098308	0000001E	C	CJS_PluginMgr::AddToolButtons
 
+, when you are supposed to actually start part of vr process and try to understand what the binary actually does and your idb pseudo code looks like this 
