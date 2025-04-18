@@ -786,7 +786,8 @@ well could it be as you said
 that the actual bug is uaf more like than type conf ???
 and just type conf cause app.fs.transitions ?
 
-add a lesson deduces from this happening
+And here comes a lesson learned during the tought process and this might be crucial for young researchers too: If a bug looks like say a type confusion in the advisory yet from your analysis seem to behave like a different class, it might be signs that in this case say or to generalize if you want to use type conf for info leak but bug behaves as uaf on windows pretty much you wont be able to infoleak.
+
 reuben:
 i can't say yet
 but listen to this
