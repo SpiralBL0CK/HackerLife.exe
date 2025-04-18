@@ -865,4 +865,164 @@ function type_conf(){
     gLockObj.__defineGetter__('fields', function () {}); 
 }
 
-But anyway why i wanted to include part of our i guess work process is to showcase as it has already been show that exploit dev is not quite an exact science. One very important lesson for new researcher and up-incoming young researchers is to realise that you'll need to arm yourself with patience and drive(also knows as motivation) in order to see very often a small ray of light which for most of times wont be the end of the tunnel but only a demise. But fear not this is part of the process. So lesson to be learned you'll be wasting a lot and i mean a lot of time when doing exploit dev. Again fear not this is part of exploitation process.
+But anyway why i wanted to include part of our i guess work process is to showcase as it has already been show that exploit dev is not quite an exact science. One very important lesson for new researcher and up-incoming young researchers is to realise that you'll need to arm yourself with patience and drive(also knows as motivation) in order to see very often a small ray of light which for most of times wont be the end of the tunnel but only a demise. But fear not this is part of the process. So lesson to be learned you'll be wasting a lot and i mean a lot of time when doing exploit dev. Again fear not this is part of exploitation process.  Now as we are getting close to the end of this article and story let me give you some more lessons which we gained during our journey.
+
+So whenever when you see that you object is not wriable and only readable , when you see that you tried everything the documentation for avaiable api provides and still went the extra mile to dump what seems as avaiable js api such as 
+AddcDocID 
+.rdata:050B1EC8	00000007	C	AddStr
+.rdata:050E8E70	00000016	C	Sign_Fill_Set_PreText
+.rdata:050E8E88	00000012	C	Sign_Fill_AddText
+.rdata:050E8E9C	00000017	C	Sign_Fill_AddText_Comb
+.rdata:050E8EE0	0000000F	C	Sign_Fill_AddX
+.rdata:050E8EF0	00000011	C	Sign_Fill_AddDot
+.rdata:050E8F04	00000011	C	Sign_Fill_Group2
+.rdata:050E8F18	00000012	C	Sign_Fill_AddLine
+.rdata:050EB4FC	0000001B	C	ACTIONANNOT::AddTypeWriter
+https://helpx.adobe.com/acrobat/kb/adding-watermark-pdf.html
+.rdata:05114CEC	0000000B	C	Sound Tool
+.rdata:05114ED8	0000003D	C	This function is deprecated. It proceed in signature plugin.
+.rdata:05114FA8	0000001A	C	File_Propertions_Security
+.rdata:05114FC4	0000001D	C	File_Propertions_Description
+.rdata:05115000	0000001D	C	File_Propertions_InitialView
+.rdata:0511502C	00000016	C	File_Propertions_Font
+.rdata:05115058	0000001A	C	File_Propertions_Advanced
+.rdata:051150E0	00000057	C	This function is deprecated. Suggest use FROptimizerFlatDocument from Optimize plugin.
+.rdata:05115138	00000059	C	This function is deprecated. Suggest use FRDocProcessSetReviewJS from docprocess plugin.
+.rdata:05115198	0000005C	C	This function is deprecated. Suggest use FRDocProcessRemoveReviewJS from docprocess plugin.
+.rdata:05115348	00000056	C	This function is deprecated. Suggest use FROptimizerRunPageFlat from Optimize plugin.
+.rdata:051153A0	00000062	C	This function is deprecated. Suggest use FRDocProcessFlattenDynamicXFADoc from docprocess plugin.
+.rdata:05115408	00000053	C	This function is deprecated. It proceed in OCR plugin of FROCRRunPageOCRPROTO api.
+.rdata:05115460	0000005D	C	This function is deprecated. It proceed in OCR plugin of GetOCREngineLocalLanguagePROTO api.
+.rdata:051154C0	0000005D	C	This function is deprecated. It proceed in OCR plugin of GetIsExistOCREngineDllTipPROTO api.
+.rdata:05115520	0000005F	C	This function is deprecated. It proceed in OCR plugin of GetOCREngineSupportLanguagePROTO api.
+.rdata:05115610	0000005D	C	This function is deprecated. Suggest use FRDocProcessGetCreationDate from docprocess plugin.
+.rdata:05115670	00000066	C	This function is deprecated. Suggest use FRDocProcessGetContainedCountInPages from docprocess plugin.
+.rdata:051156D8	00000060	C	This function is deprecated. Suggest use FRDocProcessGetPrefixMatchList from docprocess plugin.
+.rdata:05115738	00000074	C	This function is deprecated. Suggest use FROptimizerReduceFileSize and FROptimizerSetCallBack from Optimize plugin.
+.rdata:051157B0	0000005C	C	This function is deprecated. Suggest use FROptimizerShowReduceSizeDlg from Optimize plugin.
+.rdata:05115BC4	00000019	C	CFS_GLOG_V16::LogMessage
+.rdata:05115BE0	00000070	C	c:\\phantompdfci\\jenkins\\workspace\\taa-ph-auto-compile\\starship\\sinkpluginsdk_web\\win\\src\\basic\\fs_basicimpl.cpp
+.rdata:05116020	0000006C	C	This function is deprecated. Suggest use FRSIGInternalInterfaceGenerateUR3Permission from signature plugin.
+.rdata:05116090	0000005A	C	This function is deprecated. Suggest use FRPageFormatAddWatermark from pageformat plugin.
+.rdata:05116124	00000019	C	PageFormat Extension HFT
+.rdata:05116140	00000063	C	This function is deprecated. Suggest use FRPageFormatAddAndUpdateWatermark from pageformat plugin.
+.rdata:051161A8	0000005D	C	This function is deprecated. Suggest use FRPageFormatRemoveWatermark from pageformat plugin.
+.rdata:05116208	00000066	C	This function is deprecated. Suggest use FRPageFormatRemoveAndUpdateWatermark from pageformat plugin.
+.rdata:05116270	0000005D	C	This function is deprecated. Suggest use FRPageFormatAddHeaderFooter from pageformat plugin.
+.rdata:051162D0	00000066	C	This function is deprecated. Suggest use FRPageFormatAddAndUpdateHeaderFooter from pageformat plugin.
+.rdata:05116338	00000060	C	This function is deprecated. Suggest use FRPageFormatRemoveHeaderFooter from pageformat plugin.
+.rdata:05116398	00000069	C	This function is deprecated. Suggest use FRPageFormatRemoveAndUpdateHeaderFooter from pageformat plugin.
+.rdata:05116408	0000005F	C	This function is deprecated. Suggest use FRDocProcessIsUsedLogicalPage from docprocess plugin.
+.rdata:05116468	00000063	C	This function is deprecated. Suggest use FRSIGSGBaseHandlerGenerateSignInfo from signature plugin.
+.rdata:051164D0	00000064	C	This function is deprecated. Suggest use FRSIGSGBaseHandlerGenerateSignInfo3 from signature plugin.
+.rdata:05116538	00000063	C	This function is deprecated. Suggest use FRSIGSGBaseHandlerGetDefaultServer from signature plugin.
+.rdata:051165A0	0000006B	C	This function is deprecated. Suggest use FRSIGInternalInterfaceAddSignature3Handler from signature plugin.
+.rdata:05116610	00000045	C	This function is deprecated. It's not be need from signature plugin.
+.rdata:05116658	00000065	C	This function is deprecated. Suggest use FRSIGSGBaseHandlerSetSignatureVerify from signature plugin.
+.rdata:051166C0	00000066	C	This function is deprecated. Suggest use FRSIGSGBaseHandlerGetDocSigatureCount from signature plugin.
+.rdata:05116728	00000067	C	This function is deprecated. Suggest use FRSIGSGBaseHandlerGetSignatureBaseInfo from signature plugin.
+.rdata:05116790	00000061	C	This function is deprecated. Suggest use FRSIGSGBaseHandlerClearSignature from signature plugin.
+.rdata:051167F8	00000063	C	This function is deprecated. Suggest use FRSIGSGBaseHandlerCreateSignatureF from signature plugin.
+.rdata:05116860	0000005E	C	This function is deprecated. Suggest use FRSIGSGBaseHandlerSetPosition from signature plugin.
+.rdata:051168C0	0000004F	C	This function is deprecated. Suggest use FRSIGRDNCreate from signature plugin.
+.rdata:05116910	00000050	C	This function is deprecated. Suggest use FRSIGRDNDestroy from signature plugin.
+.rdata:05116960	0000004F	C	This function is deprecated. Suggest use FRSIGRDNGetcwC from signature plugin.
+.rdata:051169B0	00000050	C	This function is deprecated. Suggest use FRSIGRDNSetcwCN from signature plugin.
+.rdata:05116A00	00000050	C	This function is deprecated. Suggest use FRSIGRDNGetcwCN from signature plugin.
+.rdata:05116A50	0000004F	C	This function is deprecated. Suggest use FRSIGRDNSetcwE from signature plugin.
+.rdata:05116AA0	0000004F	C	This function is deprecated. Suggest use FRSIGRDNGetcwE from signature plugin.
+.rdata:05116AF0	0000004F	C	This function is deprecated. Suggest use FRSIGRDNSetcwL from signature plugin.
+.rdata:05116B40	0000004F	C	This function is deprecated. Suggest use FRSIGRDNGetcwL from signature plugin.
+.rdata:05116B90	0000004F	C	This function is deprecated. Suggest use FRSIGRDNSetcwO from signature plugin.
+.rdata:05116BE0	0000004F	C	This function is deprecated. Suggest use FRSIGRDNGetcwO from signature plugin.
+.rdata:05116C30	00000050	C	This function is deprecated. Suggest use FRSIGRDNSetcwOU from signature plugin.
+.rdata:05116C80	00000050	C	This function is deprecated. Suggest use FRSIGRDNGetcwOU from signature plugin.
+.rdata:05116CD0	00000050	C	This function is deprecated. Suggest use FRSIGRDNSetcwST from signature plugin.
+.rdata:05116D20	00000050	C	This function is deprecated. Suggest use FRSIGRDNGetcwST from signature plugin.
+.rdata:05116D70	00000067	C	This function is deprecated. Suggest use FRSIGCERTIFICATEINFO related interface from signature plugin.
+.rdata:05116DD8	00000065	C	This function is deprecated. Suggest use FRSIGSEEDVALUEINFO related interface from signature plugin.
+.rdata:05116E4C	0000003E	C	This function is deprecated. It proceed in signature plugin.
+.rdata:0511F140	00000007	C	AddImm
+.rdata:0511F480	0000000A	C	RowSetAdd
+.rdata:052A94B8	0000000D	C	pixAddBorder
+.rdata:052A94C8	00000019	C	pixAddBlackOrWhiteBorder
+.rdata:052A94E4	00000014	C	pixAddBorderGeneral
+.rdata:052A9510	00000020	C	pixAddMultipleBlackWhiteBorders
+
+.rdata:052A95DC	00000015	C	pixAddMirroredBorder
+.rdata:052A9608	00000015	C	pixAddRepeatedBorder
+.rdata:052A9620	00000012	C	pixAddMixedBorder
+.rdata:052A9634	00000016	C	pixAddContinuedBorder
+.rdata:052A964C	00000019	C	pixShiftAndTransferAlpha
+.rdata:052B3028	00000013	C	pixAddAlphaToBlend
+!!!!!!!!
+.rdata:052B32EC	0000000B	C	boxaAddBox
+!!!!!!!!!!!!!!!
+.rdata:052B35B8	0000000D	C	boxaaAddBoxa
+.rdata:052B35E8	00000011	C	boxaaExtendArray
+.rdata:052B35FC	00000017	C	boxaaExtendArrayToSize
+.rdata:052B3614	00000016	C	baa has too many ptrs
+.rdata:052B362C	0000001F	C	size > 1M boxa ptrs; too large
+.rdata:052B364C	0000000E	C	boxaaGetCount
+.rdata:052B365C	00000011	C	boxaaGetBoxCount
+.rdata:052B3670	0000000D	C	boxaaGetBoxa
+.rdata:052B3680	0000000C	C	boxaaGetBox
+.rdata:052B368C	00000013	C	boxa not retrieved
+.rdata:052B36F8	00000010	C	boxaaInsertBoxa
+.rdata:052B5E88	00000012	C	pixGetInputFormat
+.rdata:052B5E9C	00000012	C	pixSetInputFormat
+.rdata:052B5EB0	00000013	C	pixCopyInputFormat
+.rdata:052B5EC4	0000000E	C	pixSetSpecial
+.rdata:052B5ED4	0000000B	C	pixGetText
+.rdata:052B5EE0	0000000B	C	pixSetText
+.rdata:052B5EEC	0000000B	C	pixAddText
+.rdata:052B667C	0000000C	C	pixaaAddBox
+.rdata:052B9268	00000014	C	jbAddPageComponents
+.rdata:052B9D90	0000000D	C	numaaAddNuma
+.rdata:052C9BC8	00000010	C	sarrayAddString
+.rdata:052CACB4	00000009	C	ptaAddPt
+.rdata:052CAFB8	0000000B	C	ptaaAddPta
+.rdata:0530A890	00000010	C	selaAddDwaCombs
+.rdata:053CADD8	0000000C	C	squareimage
+.rdata:053E05C8	00000019	C	GdipPrivateAddMemoryFont
+.rdata:053E078C	00000017	C	GdipPrivateAddFontFile
+.rdata:053E0808	00000015	C	AddFontMemResourceEx
+.rdata:0548401C	00000009	C	TPadding
+.rdata:056D0DA8	0000000D	C	addListeners
+.rdata:056D0ED8	0000000C	C	addMenuItem
+.rdata:056D0EE4	0000000B	C	addSubMenu
+.rdata:056D0F48	00000009	C	addIndex
+.rdata:056D0F60	0000000B	C	addContact
+.rdata:056D0F6C	0000000B	C	addRequest
+.rdata:056D11B0	00000010	C	addEmbeddedFile
+.rdata:056D12DC	00000008	C	addWord
+.rdata:056D1528	00000009	C	addAnnot
+.rdata:056D1534	00000009	C	addField
+.rdata:056D1540	00000008	C	addLink
+.rdata:056D1548	00000008	C	addIcon
+.rdata:056D1E94	0000000D	C	Doc.addAnnot
+.rdata:056D1EA4	0000000D	C	Doc.addField
+.rdata:056D1EB4	0000000C	C	Doc.addLink
+.rdata:056D1EC0	0000000C	C	Doc.addIcon
+.rdata:056D24A8	0000000F	C	Doc.addAdLayer
+.rdata:056D5F58	0000000E	C	addToolButton
+.rdata:056D6644	00000010	C	app.addMenuItem
+.rdata:056D6668	0000000F	C	app.addSubMenu
+.rdata:056D6644	00000010	C	app.addMenuItem
+.rdata:056D7E44	0000000F	C	FDF.addContact
+.rdata:05709CF0	0000000F	C	OBJ_add_object
+.rdata:05709D00	0000000E	C	OBJ_add_sigid
+.rdata:05902BBC	00000012	C	addCustomMenuItem
+.rdata:05902BD0	00000014	C	addCustomToolButton
+.rdata:05902BE4	00000010	C	addEventHandler
+.rdata:059E64A0	0000001E	C	FillPageComboBox-AddTail -End
+.rdata:059E64C0	00000010	C	View_Panel_Goto
+.rdata:059E64D0	00000020	C	FillPageComboBox-AddTail -Start
+.rdata:05FE0420	00000077	C	?FPDFSCRIPT3D_OBJ_Runtime__Method_AddCustomMenuItem@@YAXPAU_FXJSE_HOBJECT@@ABVCFX_ByteStringC@@AAVCFXJSE_Arguments@@@Z
+.rdata:05FE0497	00000079	C	?FPDFSCRIPT3D_OBJ_Runtime__Method_AddCustomToolButton@@YAXPAU_FXJSE_HOBJECT@@ABVCFX_ByteStringC@@AAVCFXJSE_Arguments@@@Z
+.rdata:05FE0510	00000075	C	?FPDFSCRIPT3D_OBJ_Runtime__Method_AddEventHandler@@YAXPAU_FXJSE_HOBJECT@@ABVCFX_ByteStringC@@AAVCFXJSE_Arguments@@@Z
+.rdata:050896AC	00000011	C	CAddDictionaries
+.rdata:05097DD0	00000034	C	CJS_PluginMgr::LoadJSPlugin::AddToolButtons - Start
+.rdata:05097E04	00000032	C	CJS_PluginMgr::LoadJSPlugin::AddToolButtons - End
+.rdata:05098308	0000001E	C	CJS_PluginMgr::AddToolButtons
+
