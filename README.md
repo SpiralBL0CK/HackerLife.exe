@@ -1085,3 +1085,5 @@ Now as we reached the end of the story i will let you with some final lessons le
 4. keep in mind that while the advisory may suggest this could be turned into a weaponised exploit, there are a lot of obstacles that not necessarily have to do with th exploit process such as : missing enough info to be able to reverse it, too much complexity 200+ functions to understand one function , a lot of runtime decoding which has to be done manually, undocumented api functions, limited r/w capabilities, no open source code, in this said case 200k functions to be diffed for one version so arround 400k function to bindiff totaly(complexity scales real fast apparently in real world exploitation)
 5. "Know when to put last nail in the coffin", this will come with experience the more projects you attempt. But really dont strech it when theres no need.
 6. You'll defently waste a lot of time, so dont be too hursh with yourself.
+7. When you can't place objects to replace objects and only string, and they get encoded as unicode, and yet if you still bypass 
+   Finally before closing this blogpost we'll leave our code as an inspiration
