@@ -787,3 +787,32 @@ that the actual bug is uaf more like than type conf ???
 and just type conf cause app.fs.transitions ?
 
 add a lesson deduces from this happening
+reuben:
+i can't say yet
+but listen to this
+i've removed step 11 from your last poc
+and it still triggers
+
+step 11 is where you call app.fs.transitions
+we still don't know if we can use it to leak anything though lol
+
+vlad:
+agreed
+but at least we got some control now
+which again not rlly a thing
+cause it might be that it might be just coincidental and we cant control it looll
+and we back to sq1
+what is even life ????
+
+reuben:
+ok so i changed the text that's appearing in the crash now 😄
+
+vlad:
+whattt
+rlly
+you got control ?
+
+see ray of light shining
+
+reuben:
+not fully cos the text is UTF-16LE, but i might be able to do something let's see
