@@ -1076,4 +1076,12 @@ function type_conf(){
 
 and it works but you can't have something like this  let x = "\x41\x41\x41\x41" and x be used in addfield as name of said object , wait 3:30 hours to load idb in bindiff and idb not to load and exhaust 16gb of memory. those are pretty much signs that you won't be able to most likely exploit that said binary. 
 
-So lesson learned if you see that most of described things in upper paragraph 
+So lesson learned if you see that most of described things in upper paragraph for your mental health you'd be better to move onto next exploit than waste 3 additional weeks just to try to see if this is exploitable or not.
+
+Now as we reached the end of the story i will let you with some final lessons learned during this attempt to craft and sell an exploit:
+1. Dont be afraid to try to sell exploit
+2. Before you engage to try to sell an exploit , actually do the exploit and than reach the person who you try to sell the exploit
+3. Before you decide to settle for a CVE to weaponise, take arround 1 month where you start to do preliminary research before going guns blazing
+4. keep in mind that while the advisory may suggest this could be turned into a weaponised exploit, there are a lot of obstacles that not necessarily have to do with th exploit process such as : missing enough info to be able to reverse it, too much complexity 200+ functions to understand one function , a lot of runtime decoding which has to be done manually, undocumented api functions, limited r/w capabilities, no open source code, in this said case 200k functions to be diffed for one version so arround 400k function to bindiff totaly(complexity scales real fast apparently in real world exploitation)
+5. "Know when to put last nail in the coffin", this will come with experience the more projects you attempt. But really dont strech it when theres no need.
+6. You'll defently waste a lot of time, so dont be too hursh with yourself.
