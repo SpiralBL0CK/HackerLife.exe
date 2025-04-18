@@ -761,3 +761,29 @@ totaly different bug how ??
 u do know we try to access app.fs.transitions
 which only somewhat make me kinda question is this 0day or cross bug confusion or different cve granted again we delete_pages
 and app.fs.transition
+reuben:
+so before it crashed somewhere randomly. i don't know what happened
+but
+here it's crashing in the same place (replicated multiple times now)
+but get this
+it's before you call app.fs.transitions
+vlad:
+what is even life bro??
+reuben:
+i don't know how to control the data there is yet, but i'm pretty sure something can replace it
+vlad:
+ok let me ask u this
+the pocs you have rn
+they show somewhat of a control rigth
+in terms of ecx
+and from what you telling me app.fs.transitions is useless right
+cool
+so we on the right path no
+reuben:
+yes we can do without app.fs.transitions and i've been saying it for a long time now, just didn't know how to trigger it (and still don't to be honest)
+vlad:
+well could it be as you said
+that the actual bug is uaf more like than type conf ???
+and just type conf cause app.fs.transitions ?
+
+add a lesson deduces from this happening
