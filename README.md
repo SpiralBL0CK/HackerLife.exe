@@ -737,3 +737,27 @@ startxref
 
 Now what we did was we did i guess you can call it regression testing , where ruben took this poc and started ripping it apart line by line. The whole process took roughly two weeks from what i remember, but as a funny quork here's how that converstation has gone:
 
+vlad:
+i control ecx!!!!!!
+close to infoleak
+with this one you control ecx exactly but idk how to replace the string object is dead but you control sort of where it crashes
+paste random poc 
+and with this one you almost control ecx you control ecx+8 see what nah and make it infoleak please 🙂
+post random poc
+in this one you control the string 'object is dead'
+soo it should be close
+so as we concluded already exp is not 100% but it dont need to be 100% it just need to be reliable so from my test 5/3 the outout is the one from above 
+for the partial one for the object_is_dead is 100% time it crashes with ecx control
+
+reuben:
+so i'm trying to run this poc, and this is a different bug altogether lool
+vlad:
+mai i vc
+to ask
+about your findings ?
+what
+totaly different bug how ??
+0day ???
+u do know we try to access app.fs.transitions
+which only somewhat make me kinda question is this 0day or cross bug confusion or different cve granted again we delete_pages
+and app.fs.transition
