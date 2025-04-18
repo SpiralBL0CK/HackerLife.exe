@@ -1027,3 +1027,7 @@ https://helpx.adobe.com/acrobat/kb/adding-watermark-pdf.html
 .rdata:05098308	0000001E	C	CJS_PluginMgr::AddToolButtons
 
 , when you are supposed to actually start part of vr process and try to understand what the binary actually does and your idb pseudo code looks like this 
+bunch of code ommited in order to fit stuff and not make it long
+![WhatsApp Image 2025-04-18 at 17 20 10](https://github.com/user-attachments/assets/b662361b-4aee-49a3-9b56-a2ac33bd1574)
+
+And one might say a class initialisation because of this. Wrong dont trust ida because the offsets were off, and even if i were to be wrong belive me you'd still have to cross ref the function name and in 200 cross refs to analyse another 200 function to understand and on top of that dynamically resolve in windbg every ptr function call and reverse that.
