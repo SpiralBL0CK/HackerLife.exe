@@ -864,3 +864,5 @@ function type_conf(){
     
     gLockObj.__defineGetter__('fields', function () {}); 
 }
+
+But anyway why i wanted to include part of our i guess work process is to showcase as it has already been show that exploit dev is not quite an exact science. One very important lesson for new researcher and up-incoming young researchers is to realise that you'll need to arm yourself with patience and drive(also knows as motivation) in order to see very often a small ray of light which for most of times wont be the end of the tunnel but only a demise. But fear not this is part of the process. So lesson to be learned you'll be wasting a lot and i mean a lot of time when doing exploit dev. Again fear not this is part of exploitation process.
