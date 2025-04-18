@@ -735,4 +735,5 @@ startxref
 
 %%EOF
 
-Now what we did was we did i guess you can call it regression testing , where ruben took this poc and started ripping it apart line by line
+Now what we did was we did i guess you can call it regression testing , where ruben took this poc and started ripping it apart line by line. The whole process took roughly two weeks from what i remember, but as a funny quork here's how that converstation has gone:
+
